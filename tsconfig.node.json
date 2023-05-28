@@ -8,6 +8,7 @@
   },
   "include": [
     "vite.config.ts",
-    "global.d.ts"
+    "global.d.ts",
+    "auto-imports.d.ts"
   ]
 }

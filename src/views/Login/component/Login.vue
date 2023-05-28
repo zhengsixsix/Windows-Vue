@@ -1,22 +1,20 @@
 <template>
-  <Popup>
-    <div class="wrap">
-      <div class="login-wrap">
-        <div class="user-wrap">
-          <div class="avatar-wrap">
-            <img src="@/assets/img/login/avatar.jpg" />
-          </div>
-          <div class="username">参数</div>
+  <div class="wrap">
+    <div class="login-wrap">
+      <div class="user-wrap">
+        <div class="avatar-wrap">
+          <img src="@/assets/img/login/avatar.jpg" />
         </div>
-        <input class="password-ipt" @keyup="keyEvent" v-model="password" />
-        <img
-          src="@/assets/img/login/rightrow.png"
-          class="rightrow"
-          @click="goToHome"
-        />
+        <div class="username">参数</div>
       </div>
+      <input class="password-ipt" @keyup="keyEvent" v-model="password" />
+      <img
+        src="@/assets/img/login/rightrow.png"
+        class="rightrow"
+        @click="goToHome"
+      />
     </div>
-  </Popup>
+  </div>
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
@@ -31,6 +29,25 @@ const goToHome = () => {
 };
 </script>
 <style lang="less" scoped>
+@keyframes slideOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(4em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .wrap {
   width: 100vw;
   height: 100vh;
@@ -46,6 +63,7 @@ const goToHome = () => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: slideIn 1s;
     .user-wrap {
       display: flex;
       flex-direction: column;
@@ -81,5 +99,14 @@ const goToHome = () => {
       cursor: pointer;
     }
   }
+}
+.wrap::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+.blur-wrap::before {
+  filter: blur(25px);
+  backdrop-filter: blur(25px);
 }
 </style>
