@@ -17,7 +17,7 @@
       <PaneItem
         v-for="(item, index) in leftPaneData"
         :key="index"
-        :imgInfo="item"
+        :img-info="item"
         class="erery-item"
       ></PaneItem>
     </div>
@@ -25,8 +25,8 @@
 </template>
 <script lang="ts" setup>
 import PaneItem from "./component/PaneItem.vue";
-import leftPaneData from "@/data/leftPaneData.json";
-console.log(leftPaneData);
+import leftPaneDataJson from "@/data/leftPaneData.json";
+const leftPaneData = leftPaneDataJson.LeftPaneData;
 </script>
 <style lang="less" setup>
 .left-pane {
@@ -72,7 +72,7 @@ console.log(leftPaneData);
     overflow-x: hidden;
     overflow-y: scroll;
     width: 725px;
-    height: 648px;
+    height: 592px;
     margin-left: 5px;
   }
 }

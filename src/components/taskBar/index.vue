@@ -10,10 +10,32 @@
         </template>
       </Popup>
     </div>
+    <div class="center">
+      <Popup dir="bottom" v-for="item in tsTop" :key="item">
+        <component :is="item.component.value" />
+        <template #reference>
+          <div id="taskMenu" class="taskbarBtn">
+            <img :src="getSrcIcon(item.icon)" :id="`${item.icon}Img`" alt="" />
+          </div>
+        </template>
+      </Popup>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
+import { COMPONENT } from "@/type/UTILSTYPE";
+interface TSTOPITEM {
+  component: COMPONENT;
+  icon: string;
+  way: string;
+}
+type TSTop = Array<TSTOPITEM>;
 import leftPane from "../leftPane/index.vue";
+import { taskBarBottomPop } from "@/data/index.ts";
+import { getSrcIcon } from "@/utils/getSrc";
+console.log(taskBarBottomPop);
+
+const tsTop: TSTop = taskBarBottomPop;
 </script>
 <style lang="less" scoped>
 .fcs {
@@ -30,12 +52,7 @@ import leftPane from "../leftPane/index.vue";
   .tsleft {
     width: 212px;
     div {
-      height: 40px;
       padding: 0 8px;
-      //   &:hover {
-      //     background-color: @myGray;
-      //     transition: all 200ms ease-in-out;
-      //   }
       .up {
         padding: 10px 0;
       }
