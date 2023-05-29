@@ -1,6 +1,8 @@
-# Vue 3 + TypeScript + Vite
+# Windows-Vue
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+一个用vue3写的一个windows11的网页 🥳🥳🥳 可以体验一下windows11 的ui风格界面
+![image](https://github.com/zhengsixsix/Windows-Vue/assets/86777555/be56f114-4ac2-41e5-87e2-80ee078fbad3)
+
 
 ## Recommended IDE Setup
 
