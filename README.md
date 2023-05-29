@@ -1,6 +1,7 @@
 # Windows-Vue
 
-一个用vue3写的一个windows11的网页 🥳🥳🥳 可以体验一下windows11 的ui风格界面
+一个用vue3 和 TS 写的一个windows11的网页 🥳🥳🥳 可以体验一下windows11 的ui风格界面
+
 ![image](https://github.com/zhengsixsix/Windows-Vue/assets/86777555/be56f114-4ac2-41e5-87e2-80ee078fbad3)
 
 
