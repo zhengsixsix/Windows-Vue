@@ -1,18 +1,28 @@
-# Vue 3 + TypeScript + Vite
+# Windows-Vue ✈️✈️✈️
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+一个用vue3 和 TS 写的一个windows11的网页 🥳🥳🥳 可以体验一下windows11 的ui风格界面
 
-## Recommended IDE Setup
+![image](https://github.com/zhengsixsix/Windows-Vue/assets/86777555/be56f114-4ac2-41e5-87e2-80ee078fbad3)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+---
 
-## Type Support For `.vue` Imports in TS
+vue3 + ts 成为主流的开发库 这个有趣的项目可以在实现的同时，让你学习vue3 和 ts
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Install 🔃🔃🔃
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+```bash
+#pnpm
+pnpm install
+
+#dev
+pnpm dev
+
+```
+## Preview 🔎🔎🔎
+url: 暂无
+
+## Related libraries 🔗🔗🔗
+* [`dayJs`](https://www.npmjs.com/package/dayjs):dayjs 是一个轻量级的 JavaScript 库，用于解析、格式化、操作和显示日期和时间
+* [`unplugin-auto-import`](https://www.npmjs.com/package/unplugin-auto-import):针对于 Vue 3 和 TypeScript 的插件，它可以自动将您需要使用的第三方库或文件引入到您的代码中
+* [`vue-lazyload`](https://www.npmjs.com/package/vue-lazyload)：一个 Vue.js 懒加载插件，它可以帮助您优化网站或应用程序的性能
