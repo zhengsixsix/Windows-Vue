@@ -1,0 +1,20 @@
+.FullBox {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s ease-out;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgb(132, 131, 131);
+    user-select: none;
+    font-family: 'Cascadia Code';
+    z-index: -1;
+
+    // 限制缩放的大小
+    min-width: 700px;
+    min-height: 400px;
+
+}
+
+.notransition {
+    transition: 0s !important;
+}

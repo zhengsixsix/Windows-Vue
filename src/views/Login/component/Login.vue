@@ -5,7 +5,7 @@
         <div class="avatar-wrap">
           <img src="@/assets/img/login/avatar.jpg" />
         </div>
-        <div class="username">参数</div>
+        <div class="username">{{ username }}</div>
       </div>
       <input class="password-ipt" @keyup="keyEvent" v-model="password" />
       <img
@@ -19,8 +19,11 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import useUserStore from "@/store/userStore";
+const store = useUserStore();
 const Router = useRouter();
 let password = ref<number>();
+const username = ref<string>(store.getUsername);
 const keyEvent = (e: any) => {
   if (e.keyCode === 13) Router.push("/home");
 };

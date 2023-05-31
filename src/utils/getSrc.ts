@@ -8,10 +8,10 @@ const getSrcSettingTheme = (name: string) => {
 };
 
 const getSrcStartIcon = (name: string) => {
-  if (typeof name === "undefined") return "error.png";
+  if (typeof name === "undefined") return "error";
   const path = `/src/assets/img/icon/startIcon/${name}`;
   const modules = import.meta.globEager(`/src/assets/img/icon/startIcon/*`);
-  return (modules[path] as { default: string })?.default ?? "error.png";
+  return (modules[path] as { default: string })?.default ?? "error";
 };
 
 const getSrcIconUI = (name: string) => {

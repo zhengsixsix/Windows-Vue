@@ -13,6 +13,9 @@ dependencies:
   path:
     specifier: ^0.12.7
     version: registry.npmmirror.com/path@0.12.7
+  pinia:
+    specifier: ^2.0.29
+    version: registry.npmmirror.com/pinia@2.0.29(typescript@5.0.2)(vue@3.2.47)
   unplugin-auto-import:
     specifier: ^0.16.2
     version: registry.npmmirror.com/unplugin-auto-import@0.16.2
@@ -1566,6 +1569,27 @@ packages:
     engines: {node: '>=6'}
     optional: true
 
+  registry.npmmirror.com/pinia@2.0.29(typescript@5.0.2)(vue@3.2.47):
+    resolution: {integrity: sha512-5z/KpFecq/cIgfeTnulJXldiLcTITRkTe3N58RKYSj0Pc1EdR6oyCdnf5A9jLoVwBqX5LtHhd0kGlpzWvk9oiQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia/-/pinia-2.0.29.tgz}
+    id: registry.npmmirror.com/pinia/2.0.29
+    name: pinia
+    version: 2.0.29
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api@6.5.0
+      typescript: registry.npmmirror.com/typescript@5.0.2
+      vue: registry.npmmirror.com/vue@3.2.47
+      vue-demi: registry.npmmirror.com/vue-demi@0.14.5(vue@3.2.47)
+    dev: false
+
   registry.npmmirror.com/pkg-types@1.0.3:
     resolution: {integrity: sha512-nN7pYi0AQqJnoLPC9eHFQ8AcyaixBUOwvqc5TDnIKCMEE6I0y8P7OKA7fPexsXGCGxQDl/cmrLAp26LhcwxZ4A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pkg-types/-/pkg-types-1.0.3.tgz}
     name: pkg-types
@@ -1831,7 +1855,6 @@ packages:
     version: 5.0.2
     engines: {node: '>=12.20'}
     hasBin: true
-    dev: true
 
   registry.npmmirror.com/ufo@1.1.2:
     resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ufo/-/ufo-1.1.2.tgz}
@@ -1960,6 +1983,24 @@ packages:
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents@2.3.2
     dev: true
+
+  registry.npmmirror.com/vue-demi@0.14.5(vue@3.2.47):
+    resolution: {integrity: sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-demi/-/vue-demi-0.14.5.tgz}
+    id: registry.npmmirror.com/vue-demi/0.14.5
+    name: vue-demi
+    version: 0.14.5
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: registry.npmmirror.com/vue@3.2.47
+    dev: false
 
   registry.npmmirror.com/vue-lazyload@3.0.0:
     resolution: {integrity: sha512-h2keL/Rj550dLgesgOtXJS9qOiSMmuJNeVlfNAYV1/IYwOQYaWk5mFJlwRxmZDK9YC5gECcFLYYj7z1lKSf9ug==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-lazyload/-/vue-lazyload-3.0.0.tgz}

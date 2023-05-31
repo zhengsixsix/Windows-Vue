@@ -11,7 +11,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, watch } from "vue";
+import { ref, watch, defineEmits } from "vue";
 const isVisible = ref(false);
 const emits = defineEmits(["show", "hide"]);
 
@@ -21,6 +21,7 @@ defineProps({
     default: "bottom",
   },
 });
+
 watch(isVisible, () => {
   if (isVisible.value) {
     emits("show");

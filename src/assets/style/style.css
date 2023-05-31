@@ -1,0 +1,16 @@
+.FullBox {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease-out;
+  border-radius: 6px;
+  box-shadow: 0 0 15px #848383;
+  user-select: none;
+  font-family: 'Cascadia Code';
+  z-index: -1;
+  min-width: 700px;
+  min-height: 400px;
+}
+.notransition {
+  transition: 0s !important;
+}
