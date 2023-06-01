@@ -36,7 +36,6 @@ import { getSrcSetting } from "@/utils/getSrc";
 import { toolSize } from "@/data";
 import { searchMaxZindex, hideBox } from "@/utils";
 const MaxOrMin = ref("maxmin");
-// let { top, left } = toolSize;
 const that = getCurrentInstance()! as any;
 let parent: HTMLElement;
 onMounted(() => {
@@ -47,7 +46,7 @@ onMounted(() => {
   parent.style.top = `${toolSize.top}px`;
 });
 const close = () => {
-  hideBox(true, parent, parent.classList[0]);
+  hideBox(false, parent, parent.classList[0]);
 };
 const max = () => {
   if (parent.style.width === "" || parent.style.width === "100%") {
@@ -76,7 +75,10 @@ const min = () => {
 };
 const moveBox = (e: any) => {
   if (parent) {
-    parent.style.zIndex = searchMaxZindex().toString();
+    if (searchMaxZindex() > 0) {
+      parent.style.zIndex = searchMaxZindex().toString();
+    }
+
     const X = e.pageX - parent.offsetLeft;
     const Y = e.pageY - parent.offsetTop;
 
@@ -117,6 +119,7 @@ const moveBox = (e: any) => {
     padding-left: 10px;
     line-height: 30px;
     font-size: 12px;
+    background: #7fabc8;
   }
   .functionArea {
     flex: 1;
@@ -125,7 +128,7 @@ const moveBox = (e: any) => {
       height: 100%;
       border: 0;
       padding: 9.6px;
-      background-color: transparent;
+      background-color: #7fabc8;
       img {
         width: 45%;
         padding-bottom: 9.6px;

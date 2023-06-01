@@ -3,6 +3,7 @@
     <main>
       <DesktopIcon />
       <Setting />
+      <Edge />
     </main>
     <footer>
       <taskBar />
@@ -13,6 +14,7 @@
 import taskBar from "@/components/taskBar/index.vue";
 import Setting from "@/components/Setting/index.vue";
 import DesktopIcon from "@/components/DesktopIcon/index.vue";
+import Edge from "@/components/Edge/index.vue";
 import { onMounted } from "vue";
 import { getSrcSettingTheme } from "@/utils/getSrc";
 import useUserStore from "@/store/userStore";

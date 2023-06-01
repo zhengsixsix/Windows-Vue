@@ -53,13 +53,12 @@ const setIcon = (name: string) => {
   isShow.value = name;
 };
 const showTaskerbarPanel = (e: string) => {
-  console.log(e);
-
   const dom: HTMLElement = document.querySelector(`.${e}`)!;
   if (dom.style.zIndex === "" || dom.style.zIndex < "0") {
     showBox(dom);
   } else {
     if (e === "startMenu" || e === "search" || e === "widget") {
+      return hideBox(false, dom, e);
     } else {
       hideBox(true, dom, e);
     }

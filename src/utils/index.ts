@@ -6,6 +6,7 @@ import { taskBarData, toggleTaskPublicData } from "@/data";
  * 展示该组件
  */
 export const showBox = (target: HTMLElement, name?: string) => {
+  if (!target) return;
   target.style.zIndex = topZindex(target);
   target.classList.add("showBox");
   target.classList.remove("hideBox");
@@ -59,7 +60,7 @@ export const forAppArray = () => {
  * 由于底部栏的id和组件的类名同名，所以可以同时操作是否显示borderBottom
  */
 export const hideBox = (flag: boolean, target: HTMLElement, e: string) => {
-  if (!flag) return;
+  // if (!flag) return;
   target.style.zIndex = "-1";
   target.classList.remove("showBox");
   target.classList.add("hideBox");

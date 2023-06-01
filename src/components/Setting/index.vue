@@ -19,7 +19,8 @@
             <li
               v-for="(item, index) in navList"
               :key="index"
-              @click="toggle(item)"
+              :class="activiti === index ? 'activiti' : ''"
+              @click="toggle(item, index)"
             >
               <img :src="getSrcSetting(`${item}.webp`)" alt="" />
               {{ item }}
@@ -53,8 +54,10 @@ const navList: string[] = [];
 Object.keys(SettingData).forEach((item) => {
   navList.push(item);
 });
-const toggle = (item: string) => {
+let activiti = ref(0);
+const toggle = (item: string, index: number) => {
   title.value = item;
+  activiti.value = index;
   changeData(item);
 };
 
@@ -63,8 +66,12 @@ const changeData = (item: string) => {
   translateData.splice(0, translateData.length);
   translateData.push(...(SettingData as { [key: string]: any })[item]);
 };
+changeData("System");
 </script>
 <style lang="less" scoped>
+.activiti {
+  background-color: rgba(255, 255, 255, 0.8);
+}
 .settingFullBox {
   background-color: @myBlue;
 
