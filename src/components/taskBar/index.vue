@@ -53,6 +53,8 @@ const setIcon = (name: string) => {
   isShow.value = name;
 };
 const showTaskerbarPanel = (e: string) => {
+  console.log(e);
+
   const dom: HTMLElement = document.querySelector(`.${e}`)!;
   if (dom.style.zIndex === "" || dom.style.zIndex < "0") {
     showBox(dom);
