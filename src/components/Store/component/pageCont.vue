@@ -5,45 +5,65 @@
     </div>
     <div class="panelName">Home</div>
     <div class="smallBox">
-      <div class="storeRibbon">
+      <div class="storeRibbon" id="sthome">
         <div class="imageCont" v-for="(item, index) in Ribbon" :key="index">
           <a
             href="https://blueedge.me/unescape"
-            v-if="item.type === 'unescape'"
+            v-if="item.title === 'unescape'"
             target="_blank"
             rel="noreferrer"
           >
-            <img :src="item.icon" alt="" />
+            <img :src="getSrcApps(`${item.icon}`)" alt="" />
           </a>
-          <img :src="item.icon" alt="" v-else />
+          <img :src="getSrcApps(`${item.icon}`)" alt="" v-else />
+        </div>
+      </div>
+    </div>
+
+    <div id="apprib" class="frontCont">
+      <div class="left-text">
+        <div class="text-title">Featured Apps</div>
+        <div class="tetx-info">
+          Take your experience to new heights with these must-have apps
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="ribcont" v-for="(item, index) in Apprib" :key="index">
+          <div class="imageCont">
+            <img :src="getSrcApps(`${item.icon}`)" alt="" />
+          </div>
+          <div class="capitalizz">
+            {{ item.title }}
+          </div>
+          <div class="font">
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div className="text-xss">76.5k</div>
+          </div>
+          <div className="text-xss text-content">参数</div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import luca from "@/assets/img/store/float/luca.png";
-import essential from "@/assets/img/store/float/essential apps.png";
-import unescape from "@/assets/img/store/float/unescape.png";
-import utility from "@/assets/img/store/float/utility apps.png";
-import forza from "@/assets/img/store/float/forza horizon.png";
-import kids from "@/assets/img/store/float/kids apps.png";
-import microsoft from "@/assets/img/store/float/microsoft 365.png";
-import security from "@/assets/img/store/float/security.png";
-import social from "@/assets/img/store/float/social media.png";
-import xbox from "@/assets/img/store/float/xbox gamepass.png";
-const Ribbon = [
-  { icon: luca, type: "luca" },
-  { icon: essential, type: "essential" },
-  { icon: unescape, type: "unescape" },
-  { icon: utility, type: "utility" },
-  { icon: forza, type: "forza" },
-  { icon: kids, type: "kids" },
-  { icon: microsoft, type: "microsoft" },
-  { icon: security, type: "security" },
-  { icon: social, type: "social" },
-  { icon: xbox, type: "xbox" },
-];
+import { getSrcApps } from "@/utils/getSrc";
+import StoreApp from "@/data/StoreApp.json";
+const { Ribbon, Apprib } = StoreApp;
 </script>
 <style lang="less" scoped>
 .pagecont {
@@ -98,6 +118,82 @@ const Ribbon = [
           max-width: 100%;
           max-height: 100%;
           border-radius: 5px;
+        }
+      }
+    }
+  }
+  #apprib {
+    background: linear-gradient(138deg, #522f8b 0%, rgb(113, 35, 133) 100%);
+    border-radius: 8px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    overflow-x: auto;
+    display: flex;
+    justify-content: space-between;
+    .left-text {
+      color: rgb(243 244 246);
+      padding-left: 2rem;
+      padding-right: 2rem;
+      display: flex;
+      flex-direction: column;
+      width: 16rem;
+      .text-title {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+      .tetx-info {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        margin-top: 0.5rem;
+      }
+    }
+    .right-content {
+      width: max-content;
+      padding-right: 2rem;
+      display: flex;
+      .ribcont {
+        background-color: #ffffffb8;
+        margin: auto 6px;
+        width: 120px;
+        transform-origin: center;
+        transition: all ease-in-out 200ms;
+        color: #000;
+        padding: 10px;
+        border-radius: 8px;
+        .imageCont {
+          display: grid;
+          place-items: center;
+          position: relative;
+
+          img {
+            border-radius: 8px;
+            width: 100%;
+          }
+        }
+        .capitalizz {
+          text-transform: capitalize;
+          font-weight: 600;
+          font-size: 0.75rem;
+          line-height: 1rem;
+          margin-top: 15px;
+        }
+        .font {
+          display: flex;
+          .uicon {
+            display: grid;
+            place-items: center;
+            margin-right: 2px;
+            svg {
+              color: #006ff0;
+              width: 6px;
+            }
+          }
+        }
+        .text-xss {
+          font-size: 0.64em;
+        }
+        .text-content {
+          margin-top: 2rem;
         }
       }
     }

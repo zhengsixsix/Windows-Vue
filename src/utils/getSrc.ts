@@ -48,6 +48,27 @@ const getSrcSetting = (name: string) => {
   const modules = import.meta.globEager(`/src/assets/img/setting/*`);
   return (modules[path] as { default: string })?.default ?? "error.png";
 };
+const getSrcApps = (name: string) => {
+  if (typeof name === "undefined") return "error.png";
+  let folder = name.split("/");
+  if (folder.length >= 1) {
+    const path = `/src/assets/img/store/${name}`;
+    let modules: any;
+    switch (folder[0]) {
+      case "apps":
+        modules = import.meta.globEager(`/src/assets/img/store/apps/*`);
+        break;
+      case "float":
+        modules = import.meta.globEager(`/src/assets/img/store/float/*`);
+        break;
+
+      default:
+        break;
+    }
+
+    return (modules[path] as { default: string })?.default ?? "error.png";
+  }
+};
 
 export {
   getSrcSettingTheme,
@@ -57,4 +78,5 @@ export {
   getSrcSearch,
   getSrcLeftPane,
   getSrcSetting,
+  getSrcApps,
 };

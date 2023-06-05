@@ -9,7 +9,8 @@
             v-for="(item, index) in uicon"
             :key="index"
             :class="TabActiviti === index ? 'TabActiviti' : ''"
-            @click="totab(index)"
+            @click="totab(index, $event)"
+            :data-action="item.type"
           >
             <font-awesome-icon
               :icon="item.icon"
@@ -29,14 +30,32 @@ import ToolBar from "@/components/ToolBar/index.vue";
 import pageCont from "./component/pageCont.vue";
 import { ref } from "vue";
 const uicon = [
-  { icon: ["fas", "house"], style: "#888888" },
-  { icon: ["fas", "table-cells-large"], style: "#888888" },
-  { icon: ["fas", "gamepad"], style: "#888888" },
-  { icon: ["fas", "film"], style: "#888888" },
-  { icon: ["fas", "download"], style: "#888888" },
+  { icon: ["fas", "house"], style: "#888888", type: "sthome" },
+  { icon: ["fas", "table-cells-large"], style: "#888888", type: "apprib" },
+  { icon: ["fas", "gamepad"], style: "#888888", type: "gamerib" },
+  { icon: ["fas", "film"], style: "#888888", type: "movrib" },
+  { icon: ["fas", "download"], style: "#888888", type: "page1" },
 ];
 let TabActiviti = ref(0);
-const totab = (index: number) => {
+const totab = (index: number, e: any) => {
+  let x = e.target && e.target.dataset.action;
+  if (x) {
+    setTimeout(() => {
+      let target = document.getElementById(x);
+      if (
+        target &&
+        target.parentNode &&
+        target.parentNode.parentNode &&
+        target.parentNode.parentNode instanceof HTMLElement
+      ) {
+        let tsof = target.parentNode.parentNode.scrollTop,
+          trof = target.offsetTop;
+        if (Math.abs(tsof - trof) > window.innerHeight * 0.1) {
+          target.parentNode.parentNode.scrollTop = target.offsetTop;
+        }
+      }
+    }, 200);
+  }
   TabActiviti.value = index;
 };
 </script>
@@ -83,6 +102,7 @@ main {
   .restWindow {
     flex: 1;
     position: relative;
+    overflow-y: auto;
   }
 }
 </style>

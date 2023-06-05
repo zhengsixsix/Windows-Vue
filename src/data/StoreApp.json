@@ -1,0 +1,74 @@
+{
+  "Ribbon": [
+    {
+      "title": "luca",
+      "icon": "float/luca.png"
+    },
+    {
+      "title": "essential",
+      "icon": "float/essential apps.png"
+    },
+    {
+      "title": "unescape",
+      "icon": "float/unescape.png"
+    },
+    {
+      "title": "utility",
+      "icon": "float/utility apps.png"
+    },
+    {
+      "title": "forza",
+      "icon": "float/forza horizon.png"
+    },
+    {
+      "title": "kids",
+      "icon": "float/kids apps.png"
+    },
+    {
+      "title": "microsoft",
+      "icon": "float/microsoft 365.png"
+    },
+    {
+      "title": "security",
+      "icon": "float/security.png"
+    },
+    {
+      "title": "social",
+      "icon": "float/social media.png"
+    },
+    {
+      "title": "xbox",
+      "icon": "float/xbox gamepass.png"
+    }
+  ],
+  "Apprib": [
+    {
+      "title": "netflix",
+      "icon": "apps/netflix.png"
+    },
+    {
+      "title": "amazon prime",
+      "icon": "apps/amazon prime.png"
+    },
+    {
+      "title": "facebook",
+      "icon": "apps/facebook.png"
+    },
+    {
+      "title": "lightroom",
+      "icon": "apps/lightroom.png"
+    },
+    {
+      "title": "office",
+      "icon": "apps/office.png"
+    },
+    {
+      "title": "telegram",
+      "icon": "apps/telegram.png"
+    },
+    {
+      "title": "whatsApp",
+      "icon": "apps/whatsApp.png"
+    }
+  ]
+}
