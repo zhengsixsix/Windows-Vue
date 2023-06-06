@@ -61,6 +61,12 @@ const getSrcApps = (name: string) => {
       case "float":
         modules = import.meta.globEager(`/src/assets/img/store/float/*`);
         break;
+      case "games":
+        modules = import.meta.globEager(`/src/assets/img/store/games/*`);
+        break;
+      case "movies":
+        modules = import.meta.globEager(`/src/assets/img/store/movies/*`);
+        break;
 
       default:
         break;

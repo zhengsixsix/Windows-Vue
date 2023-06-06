@@ -1,11 +1,11 @@
 <template>
   <div class="pagecont">
-    <div class="imageCont frontPage">
+    <div class="imageCont frontPage" id="sthome">
       <img src="@/assets/img/store/lucacover.jpg" alt="" />
     </div>
     <div class="panelName">Home</div>
     <div class="smallBox">
-      <div class="storeRibbon" id="sthome">
+      <div class="storeRibbon">
         <div class="imageCont" v-for="(item, index) in Ribbon" :key="index">
           <a
             href="https://blueedge.me/unescape"
@@ -58,12 +58,90 @@
         </div>
       </div>
     </div>
+
+    <div id="gamerib" class="frontCont">
+      <div class="left-text">
+        <div class="text-title">Featured Games</div>
+        <div class="tetx-info">
+          Take your experience to new heights with these must-have apps
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="ribcont" v-for="(item, index) in Gamerib" :key="index">
+          <div class="imageCont">
+            <img :src="getSrcApps(`${item.icon}`)" alt="" />
+          </div>
+          <div class="capitalizz">
+            {{ item.title }}
+          </div>
+          <div class="font">
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div className="text-xss">76.5k</div>
+          </div>
+          <div className="text-xss text-content">参数</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="movrib" class="frontCont">
+      <div class="left-text">
+        <div class="text-title">Featured Films</div>
+        <div class="tetx-info">
+          Take your experience to new heights with these must-have apps
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="ribcont" v-for="(item, index) in Movrib" :key="index">
+          <div class="imageCont">
+            <img :src="getSrcApps(`${item.icon}`)" alt="" />
+          </div>
+          <div class="capitalizz">
+            {{ item.title }}
+          </div>
+          <div class="font">
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'star']" />
+            </div>
+            <div className="text-xss">76.5k</div>
+          </div>
+          <div className="text-xss text-content">参数</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { getSrcApps } from "@/utils/getSrc";
 import StoreApp from "@/data/StoreApp.json";
-const { Ribbon, Apprib } = StoreApp;
+const { Ribbon, Apprib, Movrib, Gamerib } = StoreApp;
 </script>
 <style lang="less" scoped>
 .pagecont {
@@ -102,6 +180,14 @@ const { Ribbon, Apprib } = StoreApp;
     overflow-x: scroll;
     width: 100%;
     margin-top: -4rem;
+    &::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: #777a7c;
+    }
     .storeRibbon {
       display: flex;
       display: flex;
@@ -122,14 +208,26 @@ const { Ribbon, Apprib } = StoreApp;
       }
     }
   }
+
+  #movrib,
+  #gamerib,
   #apprib {
-    background: linear-gradient(138deg, #522f8b 0%, rgb(113, 35, 133) 100%);
+    margin: 15px 10px;
+
     border-radius: 8px;
     padding-top: 5rem;
     padding-bottom: 5rem;
     overflow-x: auto;
     display: flex;
     justify-content: space-between;
+    &::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: #777a7c;
+    }
     .left-text {
       color: rgb(243 244 246);
       padding-left: 2rem;
@@ -160,6 +258,10 @@ const { Ribbon, Apprib } = StoreApp;
         color: #000;
         padding: 10px;
         border-radius: 8px;
+        &:hover {
+          transform: scale(1.06) translateY(-4px);
+          cursor: pointer;
+        }
         .imageCont {
           display: grid;
           place-items: center;
@@ -197,6 +299,15 @@ const { Ribbon, Apprib } = StoreApp;
         }
       }
     }
+  }
+  #movrib {
+    background: linear-gradient(138deg, #522f8b 0%, rgb(113, 35, 133) 100%);
+  }
+  #gamerib {
+    background: linear-gradient(138deg, #522f8b 0%, rgb(113, 35, 133) 100%);
+  }
+  #apprib {
+    background: linear-gradient(137deg, #214458 0%, #098793 100%);
   }
 }
 </style>

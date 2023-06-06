@@ -29,10 +29,59 @@
         <img :src="getSrcIcon(`${item.icon}`)" :id="`${item.name}Img`" />
       </div>
     </div>
-    <div class="right"></div>
+    <div class="right">
+      <Popup dir="bottom">
+        <runninngApps />
+        <template #reference>
+          <div class="up fcc">
+            <div class="uicon prtclk">
+              <font-awesome-icon :icon="['fas', 'chevron-up']" />
+            </div>
+          </div>
+        </template>
+      </Popup>
+
+      <Popup dir="bottom">
+        <template #reference>
+          <div class="wf">
+            <ul class="fcc">
+              <li><img src="@/assets/img/icon/ui/wifi.png" alt="" /></li>
+              <li><img src="@/assets/img/icon/ui/audio3.png" alt="" /></li>
+            </ul>
+          </div>
+        </template>
+      </Popup>
+
+      <Popup dir="bottom">
+        <template #reference>
+          <div class="data fcc">
+            <div class="systemTime">
+              <div>
+                {{
+                  time.toLocaleTimeString("en-US", {
+                    hour: "numeric",
+                    minute: "numeric",
+                  })
+                }}
+              </div>
+              <div>
+                {{
+                  time.toLocaleDateString("en-US", {
+                    year: "2-digit",
+                    month: "2-digit",
+                    day: "numeric",
+                  })
+                }}
+              </div>
+            </div>
+          </div>
+        </template>
+      </Popup>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
+import runninngApps from "../runninngApps/index.vue";
 import { COMPONENT } from "@/type/UTILSTYPE";
 import leftPane from "../leftPane/index.vue";
 import { taskBarBottomPop, taskBarData } from "@/data/index.ts";
@@ -46,7 +95,7 @@ interface TSTOPITEM {
   name: string;
 }
 type TSTop = Array<TSTOPITEM>;
-
+const time = new Date();
 const tsTop: TSTop = taskBarBottomPop;
 const isShow = ref("");
 const setIcon = (name: string) => {
@@ -133,8 +182,32 @@ const showTaskerbarPanel = (e: string) => {
     }
   }
   .right {
-    width: 60px;
-    height: 40px;
+    width: auto;
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    .wf {
+      ul {
+        display: flex;
+        padding: 0;
+        margin: 5px;
+        li {
+          padding: 0 6px;
+          img {
+            height: 16px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    .data {
+      display: flex;
+      padding: 0 5px 0 0;
+      font-size: 12px;
+      text-align: center;
+    }
   }
 }
 </style>

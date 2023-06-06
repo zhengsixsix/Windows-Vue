@@ -9,8 +9,7 @@
             v-for="(item, index) in uicon"
             :key="index"
             :class="TabActiviti === index ? 'TabActiviti' : ''"
-            @click="totab(index, $event)"
-            :data-action="item.type"
+            @click="totab(index, item.type)"
           >
             <font-awesome-icon
               :icon="item.icon"
@@ -18,7 +17,7 @@
             />
           </div>
         </div>
-        <div class="restWindow">
+        <div class="restWindow" @mousewheel="scrollChange">
           <pageCont />
         </div>
       </div>
@@ -37,26 +36,39 @@ const uicon = [
   { icon: ["fas", "download"], style: "#888888", type: "page1" },
 ];
 let TabActiviti = ref(0);
-const totab = (index: number, e: any) => {
-  let x = e.target && e.target.dataset.action;
-  if (x) {
-    setTimeout(() => {
-      let target = document.getElementById(x);
-      if (
-        target &&
-        target.parentNode &&
-        target.parentNode.parentNode &&
-        target.parentNode.parentNode instanceof HTMLElement
-      ) {
-        let tsof = target.parentNode.parentNode.scrollTop,
-          trof = target.offsetTop;
-        if (Math.abs(tsof - trof) > window.innerHeight * 0.1) {
-          target.parentNode.parentNode.scrollTop = target.offsetTop;
-        }
-      }
-    }, 200);
+const totab = (index: number, dom: string) => {
+  if (dom) {
+    let target = document.getElementById(dom);
+    if (
+      target &&
+      target.parentNode &&
+      target.parentNode.parentNode &&
+      target.parentNode.parentNode instanceof HTMLElement
+    ) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   }
   TabActiviti.value = index;
+};
+const scrollChange = () => {
+  let tabs = ["sthome", "apprib", "gamerib", "movrib"];
+  let mndis = window.innerHeight;
+  tabs.forEach((item) => {
+    let target = document.getElementById(item);
+    if (
+      target &&
+      target.parentNode &&
+      target.parentNode.parentNode &&
+      target.parentNode.parentNode instanceof HTMLElement
+    ) {
+      let tsof = target.parentNode.parentNode.scrollTop,
+        trof = target.offsetTop;
+      if (Math.abs(tsof - trof) < mndis) {
+        TabActiviti.value = tabs.indexOf(item);
+        mndis = Math.abs(tsof - trof);
+      }
+    }
+  });
 };
 </script>
 <style lang="less" scoped>
@@ -103,6 +115,14 @@ main {
     flex: 1;
     position: relative;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: #777a7c;
+    }
   }
 }
 </style>

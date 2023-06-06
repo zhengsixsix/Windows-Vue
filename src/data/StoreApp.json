@@ -70,5 +70,65 @@
       "title": "whatsApp",
       "icon": "apps/whatsApp.png"
     }
+  ],
+  "Gamerib": [
+    {
+      "title": "call",
+      "icon": "games/call of duty.png"
+    },
+    {
+      "title": "battle",
+      "icon": "games/battle field v.png"
+    },
+    {
+      "title": "cyberpunk",
+      "icon": "games/cyberpunk 2077.png"
+    },
+    {
+      "title": "far",
+      "icon": "games/far cry 5.png"
+    },
+    {
+      "title": "hitman",
+      "icon": "games/hitman 3.png"
+    },
+    {
+      "title": "minecraft",
+      "icon": "games/minecraft.png"
+    },
+    {
+      "title": "residental",
+      "icon": "games/residental evil.png"
+    }
+  ],
+  "Movrib": [
+    {
+      "title": "antman",
+      "icon": "movies/antman.png"
+    },
+    {
+      "title": "godzilla",
+      "icon": "movies/godzilla vs kong.png"
+    },
+    {
+      "title": "john",
+      "icon": "movies/john wick.png"
+    },
+    {
+      "title": "nobody",
+      "icon": "movies/nobody.png"
+    },
+    {
+      "title": "tom",
+      "icon": "movies/tom and jerry.png"
+    },
+    {
+      "title": "wonder",
+      "icon": "movies/wonder woman 1984.png"
+    },
+    {
+      "title": "wrath",
+      "icon": "movies/wrath of man.png"
+    }
   ]
 }
