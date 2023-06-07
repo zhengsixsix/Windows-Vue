@@ -42,6 +42,7 @@
       </Popup>
 
       <Popup dir="bottom">
+        <sideWifi />
         <template #reference>
           <div class="wf">
             <ul class="fcc">
@@ -53,6 +54,7 @@
       </Popup>
 
       <Popup dir="bottom">
+        <dycalendar />
         <template #reference>
           <div class="data fcc">
             <div class="systemTime">
@@ -82,6 +84,8 @@
 </template>
 <script lang="ts" setup>
 import runninngApps from "../runninngApps/index.vue";
+import sideWifi from "../sideWifi/index.vue";
+import dycalendar from "../dycalendar/index.vue";
 import { COMPONENT } from "@/type/UTILSTYPE";
 import leftPane from "../leftPane/index.vue";
 import { taskBarBottomPop, taskBarData } from "@/data/index.ts";
@@ -203,6 +207,7 @@ const showTaskerbarPanel = (e: string) => {
       }
     }
     .data {
+      cursor: pointer;
       display: flex;
       padding: 0 5px 0 0;
       font-size: 12px;
